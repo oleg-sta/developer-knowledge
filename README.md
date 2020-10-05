@@ -18,7 +18,6 @@
 * [Methodology of Development](#methodology-of-development)
 
 ## Introduction
-Software development is relatively new profession. It's hard to say when exactly it born, but we could say certainly that it evolves constantly like our big world. New technologies and concepts are constantly being born, some of them evolving, some is dying, in end up we have huge diversity of different technologies.
 
 Here is my knowledge on backend developer. It's not everything I know, but tried to emphasize most important thing need to be known by modern backend java developer. Not all the contents is filled yet, i'll fill it with time.   
 
@@ -45,11 +44,13 @@ Other things that make it's so popular - the huge number of libraries and techno
 
 ## CVS
 - git github, ....
-- mercury
 - svn
+- mercury
 
 ## Databases
 In order to store files you could use files, think about format, solve issues with multiple using. And other things, but it's better to use ready for this products for storing - databases.
+
+It's considered that NoSQL databases could be horizontally scaled, SQL only vertically. 
 ### Relational database
 Relational means there is relations between table. E.g. you have client and orders of this client. You could create something like this:
 
@@ -80,7 +81,7 @@ So here is relation, Order reference to Client by client id.
 
 
 The commonly used databases:
-* posgres
+* postgres
 * mysql
 * oracle
 
@@ -118,21 +119,44 @@ Integrated development environment is software that gives you possibility to wri
 - kibana
 
 ## Microservices
-- microservices vs monolith
+### microservices vs monolith
 - you need good reason to use microservices
 - in monolith hard to establish borders between components, all the teams work in should use the same libraries
 - by microservices you could split on independent supported by separate teams
-- docker
-- kubernetes, openshift
-- stateful, stateless services
-- service mesh
-- embedded proxy
-- sidecar proxy
-- envoy, istio
-- edge proxy
+### Docker
+Lightweight version of virtual machine, but it doesn't. It works at first on linux, on windows it just started to be implemented. Main idea it uses core of the linux, because it's stable enough and create isolate environment from other processes.
+### Kubernetes
+Orchestration for a lot of services. Uses pods as minimal thing. On Pods could be several container, but usually one.
+Type of services:
+* Stateful
+* Stateless
+### Openshift
+Red Had implementation that uses Kubernetes under the hood. It includes UI, aggregated command line, images stores and other features. 
+### service mesh
+#### Embedded proxy
+Proxy as a library. Hard to implement because for each different language required their own library. But fastest.
+#### Sidecar proxy
+Proxy that started near service, e.g. on the same pod. Service sends request to sidecard proxy, then proxy reroute it.
+#### Envoy
+Sidecar proxy written on C++. Supports http, http2, grpc, databases connections.
+Could also be used as edge proxy.
+#### Istio
+Control for traffic, secure, rules, circuit braking.
+#### Edge proxy
+Proxy before service mesh, something like reverse proxy.
 
 ## Service communications
 ### gRPC
+uses two main things:
+* protobuf
+* http/2
+
+Protobuf is way for describe api.
+http2 use the same channel for bidirectional requests.
+
+built in features:
+* timeouts, you could always set timeouts in the request
+
 ### rest, soap, ..
 ### http2
 ### webservice...
@@ -154,7 +178,18 @@ If you want to hide server from client, you use reverse proxy. In some situation
 
 ## Network
 ### OSI model
-7  layers
+OSI(Open Systems Interconnection Model) conceptual model that shows the levels of system interaction.
+
+
+| Level | Name         |
+| ------| -------------|
+| 7     | Application  |
+| 6     | Presentation |
+| 5     | Session      |
+| 4     | Transport    |
+| 3     | Network      |
+| 2     | Data Link    |
+| 1     | Physical     |
 
 ## Continuous Integration
 - circleci
