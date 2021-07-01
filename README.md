@@ -2,7 +2,7 @@
 
 # Table of Contents
 * [Introduction](#introduction)
-* [Algorithms](#algorithms)
+* [Algorithms and Data Structure](#algorithms)
 * [Languages](#languages)
 * [CVS](#cvs)
 * [Databases](#databases)
@@ -19,9 +19,9 @@
 
 ## Introduction
 
-Here is my knowledge on backend developer. It's not everything I know, but tried to emphasize most important thing need to be known by modern backend java developer. Not all the contents is filled yet, i'll fill it with time.   
+Here is my knowledge for backend software developer. Please use it.   
 
-## Algorithms
+## Algorithms and Data Structure
 ### Structure Data
 #### DFS
 #### BFS
@@ -42,63 +42,33 @@ The most rival feature is build once then run anywhere. Java compiler creates by
 Other things that make it's so popular - the huge number of libraries and technologies with java could be used. 
 ### scala
 
-## CVS
-- git github, ....
-- svn
-- mercury
+## Version Control
+* [git](https://git-scm.com/)
+* svn
+
 
 ## Databases
 In order to store files you could use files, think about format, solve issues with multiple using. And other things, but it's better to use ready for this products for storing - databases.
-
 It's considered that NoSQL databases could be horizontally scaled, SQL only vertically. 
 ### Relational database
-Relational means there is relations between table. E.g. you have client and orders of this client. You could create something like this:
-
-| Client      | cell phone  | Order     |
-| ----------- | ----------- | --------- |
-| Alex        | 11123       | order1    |
-| Alex        | 11123       | order2    |
-| Bob         | 33433       | order1    |
-
-in relation world it could consist of two tables: Clients and Orders
-
-Client table
-
-| Id   | Client | cell phone |
-| -----| ------ | ---------- |
-| 1    | Alex   | 11123      |
-| 2    | Bob    | 33433      |
-
-Order table 
-
-| Id | client_id | Order  |
-| ---| --------- | ------ |
-| 1  | 1         | order1 |
-| 2  | 1         | order2 |
-| 3  | 2         | order1 |
-
-So here is relation, Order reference to Client by client id.
-
-
-The commonly used databases:
-* postgres
-* mysql
+* [postgres](https://www.postgresql.org/)
+* [mysql](https://www.mysql.com/)
 * oracle
-
-### key-value
+### Non-relational(NoSQL)
+#### key-value
  * redis
  * memcache
-### document
+#### document
  * mongodb
-### columns
+#### columns
  * cassandra
-### graph
+#### graph
  * neo4j
-### search
+#### search
  * elastic
  * solr
 
-## IDE
+## Interactive Development Environment
 Integrated development environment is software that gives you possibility to write code easily. Literally they help you to do it.
 ### Intelij DEA
 ### Eclipse
@@ -107,16 +77,16 @@ Integrated development environment is software that gives you possibility to wri
 - Spring, beans, DI/IC
 
 ## Streaming
-- kafka
-- rabbitMQ
+* [kafka](https://kafka.apache.org/)
+* [rabbitMQ](https://www.rabbitmq.com/)
 
 ## Observability
-- SLO/SLI/SLA
-- latency/throughput
-- opentracing jaeger
-- monitoring
-- grafana
-- kibana
+* [SLO/SLI/SLA](https://sre.google/sre-book/service-level-objectives/)
+* latency/throughput
+* opentracing jaeger
+* monitoring
+* grafana
+* kibana
 
 ## Microservices
 ### microservices vs monolith
@@ -178,23 +148,13 @@ If you want to hide server from client, you use reverse proxy. In some situation
 
 ## Network
 ### OSI model
-OSI(Open Systems Interconnection Model) conceptual model that shows the levels of system interaction.
-
-
-| Level | Name         |
-| ------| -------------|
-| 7     | Application  |
-| 6     | Presentation |
-| 5     | Session      |
-| 4     | Transport    |
-| 3     | Network      |
-| 2     | Data Link    |
-| 1     | Physical     |
+[OSI(Open Systems Interconnection Model)](https://en.wikipedia.org/wiki/OSI_model) conceptual model that shows the levels of system interaction.
 
 ## Continuous Integration
-- circleci
-- jenkins
-- teamcity
+Helps to automate building
+* [circleci](https://circleci.com/)
+* [jenkins](https://www.jenkins.io/)
+* [teamcity](https://www.jetbrains.com/teamcity/)
 
 ## Architecture
 
